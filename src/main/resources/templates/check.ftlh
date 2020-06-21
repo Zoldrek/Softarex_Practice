@@ -1,8 +1,21 @@
 <#import "parts/common.ftlh" as c>
+<#import "parts/panel.ftlh" as l>
 <@c.page>
-    <form action="/check" method="post" class="form-inline">
-        <div  class="form-group mx-sm-3 mb-2 ml-2">
-            <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    <@l.panel/>
+    <div class="row justify-content-around">
+    <div  class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+        <label> Class members</label><br>
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+        <div class="bs-example">
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    User1 <i class="fa fa-hand-paper-o pull-right"></i>
+                </a>
+                <a href="#" class="list-group-item">
+                    User2
+                </a>
+            </div>
         </div>
-    </form>
+    </div>
+    </div>
 </@c.page>
