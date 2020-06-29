@@ -2,7 +2,7 @@
 <#import "parts/panel.ftlh" as l>
 <@c.page>
     <@l.panel/>
-    <div class="row justify-content-around">
+    <div class="row justify-content-around" xmlns:th="http://www.w3.org/1999/xhtml">
     <div  class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
         <label> Class members</label><br>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
@@ -16,6 +16,11 @@
                 </a>
             </div>
         </div>
+        <#list users as user>
+        <p>${user}</p>
+        <#else>
+        <p>No users
+        </#list>
     </div>
     </div>
 </@c.page>

@@ -24,8 +24,7 @@ public class RegistrationController {
     private UserRepo userRepo;
 
     @GetMapping("/registration")
-    public String registration(Map<String, Object> model) {
-        model.put("message", "reg");
+    public String registration() {
         return "registration";
     }
 
