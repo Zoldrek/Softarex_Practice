@@ -1,6 +1,5 @@
 package com.example.sweater.config;
 
-import com.example.sweater.domain.ActiveUserStore;
 import com.example.sweater.service.UserSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -13,7 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 
 @Configuration
@@ -21,10 +19,6 @@ import org.springframework.security.web.session.HttpSessionEventPublisher;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserSevice userSevice;
-    @Bean
-    public ActiveUserStore activeUserStore(){
-        return new ActiveUserStore();
-    }
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {

@@ -16,11 +16,6 @@
                 </a>
             </div>
         </div>
-        <#list users as user>
-        <p>${user}</p>
-        <#else>
-        <p>No users
-        </#list>
     </div>
     </div>
 </@c.page>
